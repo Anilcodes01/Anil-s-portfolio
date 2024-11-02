@@ -10,9 +10,10 @@ export default function Home() {
       <div className="flex flex-col  max-w-screen-md mx-auto">
         <div className="flex gap-4 justify-between items-center">
           <div className="flex flex-col  lg:text-left">
-            <div className="text-6xl font-bold">Hi, I'm Anil 👋</div>
+            <div className="text-6xl font-bold">Hi, I&apos;m Anil 👋</div>
             <div className="text-gray-600 mt-1">
-              I'm a self-taught full stack developer, proficient in building fullstack web apps.
+              I&apos;m a self-taught full stack developer, proficient in
+              building fullstack web apps.
             </div>
           </div>
           <div>
