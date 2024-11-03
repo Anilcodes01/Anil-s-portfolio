@@ -1,6 +1,8 @@
+import { useRouter } from "next/navigation"
 
 
 export default function Contact() {
+    
 
     return <div className="flex justify-center">
         
@@ -12,7 +14,9 @@ export default function Contact() {
 
             <div className="text-md mt-1 text-center flex w-full justify-center" >
             <p>Wanna contact with me? Just shoot me a dm on </p>
-            <span className="text-blue-400 hover:underline cursor-pointer">Twitter</span>
+            <a href="https://x.com/Anilcodes01">
+            <span   className="text-blue-400 hover:underline cursor-pointer">Twitter</span>
+            </a>
             </div>
         </div>
     </div>
