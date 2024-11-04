@@ -43,7 +43,7 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <div className={`min-h-screen pt-20 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
+    <div className={`min-h-screen lg:pt-20 md:pt-10 pt-8 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
       <div className="flex flex-col max-w-screen-md mx-auto">
         {/* Toggle Button with Icons */}
         <div className="flex justify-between items-center mb-4">
