@@ -1,10 +1,22 @@
+'use client'
 import Image from "next/image";
 import About from "./components/about";
 import TechStack from "./components/Techstack";
 import Projects from "./components/fullProject";
 import Contact from "./components/contact";
+import { useRef } from "react";
 
 export default function Home() {
+
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToProjects = () => {
+    if(projectsRef.current) {
+      projectsRef.current.scrollIntoView({behavior: "smooth"})
+    }
+  }
+
+
   return (
     <div className="bg-gray-50 min-h-screen pt-20 flex justify-center items-center p-10 text-black">
       <div className="flex flex-col  max-w-screen-md mx-auto">
@@ -28,14 +40,14 @@ export default function Home() {
         </div>
 
         <div className="mt-16">
-          <About />
+          <About onProjectsClick={scrollToProjects} />
         </div>
 
         <div className="mt-6">
           <TechStack />
         </div>
 
-        <div className="mt-6">
+        <div ref={projectsRef} className="mt-6">
           <Projects />
         </div>
 
