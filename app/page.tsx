@@ -1,14 +1,16 @@
-'use client'
+'use client';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import About from "./components/about";
 import TechStack from "./components/Techstack";
 import Projects from "./components/fullProject";
 import Contact from "./components/contact";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { FaSun, FaMoon } from 'react-icons/fa'; 
 
 export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const scrollToProjects = () => {
     if (projectsRef.current) {
@@ -16,7 +18,6 @@ export default function Home() {
     }
   };
 
-  
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: (index: number) => ({
@@ -26,9 +27,36 @@ export default function Home() {
     })
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    const storedMode = localStorage.getItem('darkMode');
+    if (storedMode === 'true') {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', isDarkMode.toString());
+  }, [isDarkMode]);
+
   return (
-    <div className="bg-gray-50 min-h-screen pt-20 flex justify-center items-center lg:p-10 p-4 md:p-10 text-black">
+    <div className={`min-h-screen pt-20 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
       <div className="flex flex-col max-w-screen-md mx-auto">
+        {/* Toggle Button with Icons */}
+        <div className="flex justify-between items-center mb-4">
+          
+          <div onClick={toggleDarkMode} className="cursor-pointer flex items-center">
+            {isDarkMode ? (
+              <FaMoon className="text-yellow-400 w-6 h-6" />
+            ) : (
+              <FaSun className="text-yellow-400 w-6 h-6" />
+            )}
+          </div>
+        </div>
+
         <motion.div
           className="flex gap-4 justify-between items-center"
           custom={0}
@@ -38,9 +66,8 @@ export default function Home() {
         >
           <div className="flex flex-col lg:text-left">
             <div className="lg:text-6xl md:text-6xl text-xl font-bold">Hi, I&apos;m Anil 👋</div>
-            <div className="text-gray-600 lg:text-md text-sm md:text-md  mt-1">
-              I&apos;m a self-taught full stack developer, proficient in
-              building fullstack web apps.
+            <div className={` ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} lg:text-md text-sm md:text-md mt-1`}>
+              I&apos;m a self-taught full stack developer, proficient in building fullstack web apps.
             </div>
           </div>
           <div>
@@ -61,7 +88,7 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <About onProjectsClick={scrollToProjects} />
+          <About isDarkMode={isDarkMode} onProjectsClick={scrollToProjects} />
         </motion.div>
 
         <motion.div
@@ -71,7 +98,7 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <TechStack />
+          <TechStack isDarkMode={isDarkMode} />
         </motion.div>
 
         <motion.div
@@ -82,7 +109,7 @@ export default function Home() {
           variants={containerVariants}
           ref={projectsRef}
         >
-          <Projects />
+          <Projects isDarkMode={isDarkMode} />
         </motion.div>
 
         <motion.div
@@ -92,7 +119,7 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <Contact />
+          <Contact isDarkMode={isDarkMode}/>
         </motion.div>
       </div>
     </div>
