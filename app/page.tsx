@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-20 flex justify-center items-center p-10 text-black">
+    <div className="bg-gray-50 min-h-screen pt-20 flex justify-center items-center lg:p-10 p-4 md:p-10 text-black">
       <div className="flex flex-col max-w-screen-md mx-auto">
         <motion.div
           className="flex gap-4 justify-between items-center"
@@ -37,8 +37,8 @@ export default function Home() {
           variants={containerVariants}
         >
           <div className="flex flex-col lg:text-left">
-            <div className="text-6xl font-bold">Hi, I&apos;m Anil 👋</div>
-            <div className="text-gray-600 mt-1">
+            <div className="lg:text-6xl md:text-6xl text-xl font-bold">Hi, I&apos;m Anil 👋</div>
+            <div className="text-gray-600 lg:text-md text-sm md:text-md  mt-1">
               I&apos;m a self-taught full stack developer, proficient in
               building fullstack web apps.
             </div>
