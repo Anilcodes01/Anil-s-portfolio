@@ -48,7 +48,7 @@ export default function Home() {
         {/* Toggle Button with Icons */}
         <div className="flex justify-between items-center mb-4">
           
-          <div onClick={toggleDarkMode} className="cursor-pointer flex items-center">
+          <div onClick={toggleDarkMode} className="cursor-pointer lg:pl-0 pl-3   flex items-center">
             {isDarkMode ? (
               <FaMoon className="text-yellow-400 w-6 h-6" />
             ) : (
@@ -64,9 +64,9 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <div className="flex flex-col lg:text-left">
-            <div className="lg:text-6xl md:text-6xl text-xl font-bold">Hi, I&apos;m Anil 👋</div>
-            <div className={` ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} lg:text-md text-sm md:text-md mt-1`}>
+          <div className="flex flex-col lg:p-0  pl-3 lg:text-left">
+            <div className="lg:text-6xl md:text-6xl  text-xl font-bold">Hi, I&apos;m Anil 👋</div>
+            <div className={` ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} lg:text-md  md:text-md mt-1`}>
               I&apos;m a self-taught full stack developer, proficient in building fullstack web apps.
             </div>
           </div>
