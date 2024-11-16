@@ -2,6 +2,7 @@ import ProjectCard from '@/app/components/projectCard';
 
 export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
   const projectData = [
+
     {
       title: 'ProNext',
       description: 'ProNext is a social app for developers, where developers can showcase their projects and collaborate with other developers.',
@@ -9,6 +10,14 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       techStack: ['React', 'Next.js', 'Tailwind CSS', 'Cloudinary', 'PostgreSQL', 'Prisma', 'Typescript'],
       liveUrl: 'https://pro-next-one.vercel.app/',
       repoUrl: 'https://github.com/Anilcodes01/ProNext'
+    },
+    {
+      title: 'Moments',
+      description: 'Moments is a place where users can save their memories and moments spent with their friends, family and loved ones like they write it in diary. User can save a moment in image, video and write about the image also.',
+      image: '/Screenshot 2024-11-16 193125.png',
+      techStack: ['React Js','Next.js', 'Typescript', 'PostgreSQL', 'TailwindCSS', 'Node Js', 'Cloudinary', 'Prisma'],
+      liveUrl: 'https://moments-iota.vercel.app/',
+      repoUrl: 'https://github.com/Anilcodes01/Moments'
     },
     {
       title: 'NextBuy',
@@ -33,7 +42,8 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       techStack: ['React Js', 'Typescript', 'Mongo DB', 'TailwindCSS', 'Express Js', 'Node Js', 'Zod'],
       liveUrl: 'https://project-four.com',
       repoUrl: 'https://github.com/yourusername/project-four'
-    }
+    },
+   
   ];
 
   return (
