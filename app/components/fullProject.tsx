@@ -35,6 +35,8 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       liveUrl: 'https://dorse-inc.vercel.app/',
       repoUrl: 'https://github.com/Anilcodes01/Dorse-Inc'
     },
+   
+    
     {
       title: 'NoteEase',
       description: 'NoteEase is a web app where you can create, update, delete and read notes smoothly.',
@@ -42,6 +44,15 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       techStack: ['React Js', 'Typescript', 'Mongo DB', 'TailwindCSS', 'Express Js', 'Node Js', 'Zod'],
       liveUrl: 'https://project-four.com',
       repoUrl: 'https://github.com/yourusername/project-four'
+    },
+
+    {
+      title: 'School Management API',
+      description: 'This is a backend of a school management application to add school and get the list of school by providing longitudes and latitudes.',
+      image: '/Screenshot 2024-11-27 163918.png',
+      techStack: [ 'Node Js', 'Express Js',  'Javascript', 'Railway', 'MySQL'],
+      liveUrl: 'https://school-management-q6oe.onrender.com/api/listSchools?latitude=54.4231&longitude=-70.8877',
+      repoUrl: 'https://github.com/Anilcodes01/School_management'
     },
    
   ];
