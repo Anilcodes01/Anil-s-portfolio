@@ -1,8 +1,8 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { FolderKanban } from 'lucide-react';
+import { FolderKanban } from "lucide-react";
 import { motion } from "framer-motion";
-import { FileText } from 'lucide-react';
+import { FileText } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -17,8 +17,9 @@ type SocialProps = {
 
 const SocialLinks = ({ isDarkMode, onProjectsClick }: SocialProps) => {
   // Handle email click
-  const handleEmailClick = () => {
-    window.location.href = "mailto:anilcodes01@gmail.com";
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open("mailto:anilcodes01@gmail.com", "_blank");
   };
 
   return (
@@ -107,6 +108,7 @@ const SocialLinks = ({ isDarkMode, onProjectsClick }: SocialProps) => {
                     ? "text-gray-300 hover:text-white"
                     : "text-gray-600 hover:text-gray-900"
                 }`}
+                aria-label="Send email"
               >
                 <FaEnvelope className="w-6 h-6" />
               </button>
@@ -146,7 +148,7 @@ const SocialLinks = ({ isDarkMode, onProjectsClick }: SocialProps) => {
                     : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                <FolderKanban  className="w-6 h-6"/>
+                <FolderKanban className="w-6 h-6" />
               </button>
             </TooltipTrigger>
             <TooltipContent>
