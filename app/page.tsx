@@ -7,6 +7,7 @@ import Projects from "./components/fullProject";
 import Contact from "./components/contact";
 import { useRef, useState, useEffect } from "react";
 import { FaSun, FaMoon } from 'react-icons/fa'; 
+import SocialLinks from "./components/SocialLinks";
 
 export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -80,6 +81,8 @@ export default function Home() {
             />
           </div>
         </motion.div>
+
+        <SocialLinks isDarkMode={isDarkMode} onProjectsClick={scrollToProjects} />
 
         <motion.div
           className="mt-16"
