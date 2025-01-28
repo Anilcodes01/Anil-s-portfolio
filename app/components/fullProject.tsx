@@ -12,6 +12,14 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       repoUrl: 'https://github.com/Anilcodes01/ProNext'
     },
     {
+      title: 'WanderWise',
+      description: 'Explore extraordinary destinations, create unforgettable memories, and embark on journeys that will last a lifetime.',
+      image: '/Screenshot 2025-01-28 201712.png',
+      techStack: ['Javascript', 'React', 'NodeJs', 'ExpressJs', 'Tailwind CSS', 'MongoDB'],
+      liveUrl: 'https://wanderwise-tl1p.vercel.app/home',
+      repoUrl: 'https://github.com/Anilcodes01/Wanderwise'
+    },
+    {
       title: 'Moments',
       description: 'Moments is a place where users can save their memories and moments spent with their friends, family and loved ones like they write it in diary. User can save a moment in image, video and write about the image also.',
       image: '/Screenshot 2024-11-16 193125.png',
