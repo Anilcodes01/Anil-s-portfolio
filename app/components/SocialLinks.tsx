@@ -121,7 +121,7 @@ const SocialLinks = ({ isDarkMode, onProjectsClick }: SocialProps) => {
           <Tooltip>
             <TooltipTrigger asChild>
               <a
-                href="/Anil Pal resume.pdf"
+                href="/Anil Pal_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center transition-transform hover:scale-110 ${

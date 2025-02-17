@@ -12,6 +12,14 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
       repoUrl: 'https://github.com/Anilcodes01/ProNext'
     },
     {
+      title: 'BookShelf',
+      description: 'BookShelf is a digital library where users can review books and add new books.',
+      image: '/Screenshot 2025-02-15 104857.png',
+      techStack: ['React', 'JavaScript', 'Tailwind CSS', 'NodeJS', 'MongoDB', 'ExpressJS', ],
+      liveUrl: 'https://shelf-fq8x.vercel.app/',
+      repoUrl: 'https://github.com/Anilcodes01/Shelf'
+    },
+    {
       title: 'WanderWise',
       description: 'Explore extraordinary destinations, create unforgettable memories, and embark on journeys that will last a lifetime.',
       image: '/Screenshot 2025-01-28 201712.png',
