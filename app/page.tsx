@@ -6,7 +6,6 @@ import TechStack from "./components/Techstack";
 import Projects from "./components/fullProject";
 import Contact from "./components/contact";
 import { useRef, useState, useEffect } from "react";
-import { FloatingDock } from "./components/floating-dock";
 
 export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -41,10 +40,10 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <div className={`min-h-screen lg:pt-10 md:pt-10 pt-8 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
+    <div className={`min-h-screen   flex justify-center items-center lg:p-10  md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : ' text-black'}`}>
       <div className="flex flex-col max-w-screen-md mx-auto">
        
-       <FloatingDock />
+     
         
         <motion.div
           className="flex gap-4 justify-between items-center"
