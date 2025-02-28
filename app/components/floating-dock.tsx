@@ -33,7 +33,7 @@ import {
     href: string;
   };
   
-  type MouseEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
+  type CustomMouseEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
   
   const FloatingDockCore = () => {
     const links: Link[] = [
@@ -83,7 +83,7 @@ import {
   
     return (
       <motion.div
-        onMouseMove={(e: MouseEvent) => mouseX.set(e.pageX)}
+        onMouseMove={(e: CustomMouseEvent) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
         className="rounded-full px-12 justify-center bg-neutral-100 flex gap-4 w-fit relative"
       >
