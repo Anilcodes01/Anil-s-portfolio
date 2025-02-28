@@ -17,12 +17,12 @@ export default function BlogPost() {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold mb-4">Loading post...</h1>
-        <p>If the post doesn't appear, it may not exist.</p>
+        <p>If the blog doesn&apos;t appear, it may not exist.</p>
         <Link
-          href="/"
-          className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800"
+          href="/blogs"
+          className="inline-flex items-center mt-4 text-orange-500 hover:text-orange-700"
         >
-          <IconArrowLeft size={16} className="mr-1" /> Back to all posts
+          <IconArrowLeft size={16} className="mr-1" /> Back to all blogs
         </Link>
       </div>
     );
@@ -32,7 +32,7 @@ export default function BlogPost() {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Link
         href="/blogs"
-        className="inline-flex items-center mb-8 text-gray-600 hover:text-gray-900"
+        className="inline-flex items-center mb-8 text-orange-500 hover:text-orange-600"
       >
         <IconArrowLeft size={16} className="mr-1" /> All posts
       </Link>
@@ -56,7 +56,7 @@ export default function BlogPost() {
           {blog.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full"
+              className="px-3 py-1 bg-orange-300 text-gray-700 text-sm font-medium rounded-full"
             >
               {tag}
             </span>

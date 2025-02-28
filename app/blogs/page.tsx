@@ -22,7 +22,7 @@ export default function Blogs() {
             </div>
             
             <h3 className="text-xl font-bold mb-2 text-gray-900">
-              <Link href={`/blog/${blog.id}`} className="hover:text-blue-600 transition">
+              <Link href={`/blog/${blog.id}`} className="hover:text-orange-600 transition">
                 {blog.title}
               </Link>
             </h3>
@@ -31,13 +31,13 @@ export default function Blogs() {
             
             <div className="flex flex-wrap gap-2 mb-4">
               {blog.tags.map(tag => (
-                <span key={tag} className="px-2.5 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
+                <span key={tag} className="px-2.5 py-0.5 bg-orange-300 text-gray-700 text-xs font-medium rounded-full">
                   {tag}
                 </span>
               ))}
             </div>
             
-            <Link href={`/blogs/${blog.id}`} className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
+            <Link href={`/blogs/${blog.id}`} className="inline-flex items-center text-orange-500 font-medium hover:text-orange-600 transition">
               Read more <IconArrowRight size={16} className="ml-1" />
             </Link>
           </article>
