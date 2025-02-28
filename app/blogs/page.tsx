@@ -22,7 +22,7 @@ export default function Blogs() {
             </div>
             
             <h3 className="text-xl font-bold mb-2 text-gray-900">
-              <Link href={`/blog/${blog.id}`} className="hover:text-orange-600 transition">
+              <Link href={`/blogs/${blog.id}`} className="hover:text-orange-600 transition">
                 {blog.title}
               </Link>
             </h3>
