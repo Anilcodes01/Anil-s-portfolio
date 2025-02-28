@@ -6,8 +6,7 @@ import TechStack from "./components/Techstack";
 import Projects from "./components/fullProject";
 import Contact from "./components/contact";
 import { useRef, useState, useEffect } from "react";
-import { FaSun, FaMoon } from 'react-icons/fa'; 
-import SocialLinks from "./components/SocialLinks";
+import { FloatingDock } from "./components/floating-dock";
 
 export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -28,9 +27,7 @@ export default function Home() {
     })
   };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+ 
 
   useEffect(() => {
     const storedMode = localStorage.getItem('darkMode');
@@ -44,20 +41,11 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <div className={`min-h-screen lg:pt-20 md:pt-10 pt-8 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
+    <div className={`min-h-screen lg:pt-10 md:pt-10 pt-8 flex justify-center items-center lg:p-10 p-4 md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
       <div className="flex flex-col max-w-screen-md mx-auto">
-        {/* Toggle Button with Icons */}
-        <div className="flex justify-between items-center mb-4">
-          
-          <div onClick={toggleDarkMode} className="cursor-pointer lg:pl-0 pl-3   flex items-center">
-            {isDarkMode ? (
-              <FaMoon className="text-yellow-400 w-6 h-6" />
-            ) : (
-              <FaSun className="text-yellow-400 w-6 h-6" />
-            )}
-          </div>
-        </div>
-
+       
+       <FloatingDock />
+        
         <motion.div
           className="flex gap-4 justify-between items-center"
           custom={0}
@@ -82,10 +70,10 @@ export default function Home() {
           </div>
         </motion.div>
 
-        <SocialLinks isDarkMode={isDarkMode} onProjectsClick={scrollToProjects} />
+       
 
         <motion.div
-          className="mt-16"
+          className="mt-8"
           custom={1}
           initial="hidden"
           animate="visible"
