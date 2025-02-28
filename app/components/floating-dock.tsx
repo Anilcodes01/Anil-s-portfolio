@@ -29,9 +29,11 @@ import {
   
   type Link = {
     title: string;
-    icon: React.ReactNode | any;
+    icon: React.ReactNode;
     href: string;
   };
+  
+  type MouseEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
   
   const FloatingDockCore = () => {
     const links: Link[] = [
@@ -81,11 +83,11 @@ import {
   
     return (
       <motion.div
-        onMouseMove={(e: any) => mouseX.set(e.pageX)}
-        onMouseLeave={(e: any) => mouseX.set(Infinity)}
+        onMouseMove={(e: MouseEvent) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
         className="rounded-full px-12 justify-center bg-neutral-100 flex gap-4 w-fit relative"
       >
-        {links.map((el, idx) => (
+        {links.map((el) => (
           <IconContainer mouseX={mouseX} key={el.title} el={el} />
         ))}
       </motion.div>
@@ -103,15 +105,15 @@ import {
     const [hovered, setHovered] = useState(false);
   
     const distance = useTransform(mouseX, (val) => {
-      let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+      const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
       return val - bounds.x - bounds.width / 2;
     });
   
-    let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-    let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+    const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+    const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   
-    let widthIconTransform = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
-    let heightIconTransform = useTransform(
+    const widthIconTransform = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+    const heightIconTransform = useTransform(
       distance,
       [-150, 0, 150],
       [20, 40, 20]
@@ -171,7 +173,7 @@ import {
                 y: 2,
                 x:'-50%'
               }}
-              className="absolute text-xs left-1/2 -translate-x-1/2 -top-8 inset-x-0 px-2 py-0.4 whitespace-pre bg-neutral-100 rounded-md w-fit text-neutral-500 "
+              className="absolute text-xs left-1/2 -translate-x-1/2 -top-8 inset-x-0 px-2 py-0.4 whitespace-pre bg-neutral-100 rounded-md w-fit text-neutral-500 z-10"
             >
               {el.title}
             </motion.div>
@@ -180,7 +182,7 @@ import {
          
           <motion.div
             style={{ width: widthIcon, height: heightIcon }}
-            className="flex items-center  justify-center"
+            className="flex items-center justify-center"
           >
             {el.icon}
           </motion.div>
