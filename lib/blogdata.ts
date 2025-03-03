@@ -4,7 +4,7 @@ export const blogs = [
     title: "Why Local AI Agents Are the Future of Personal Computing?",
     description:
       "Exploring the shift from cloud-based AI to local AI models, the benefits of data privacy, and the challenges we face in making local AI mainstream.",
-    publishedAt: new Date("2024-12-20"),
+    publishedAt: new Date("2025-03-03"),
     imageUrl:
       "https://media.licdn.com/dms/image/v2/D5612AQFmLqOFg91xaw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1727424696212?e=2147483647&v=beta&t=3XN4rEIUciUXwKkWO8n-zsl9P7wNYts-W8sfoMtMzkA",
     readTime: 6,

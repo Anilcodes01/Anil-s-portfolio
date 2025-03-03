@@ -42,7 +42,9 @@ export default function BlogPost() {
       </Link>
 
       <header className="mb-10">
-        <h1 className="text-4xl font-bold mb-6 font-poppins text-gray-900">{blog.title}</h1>
+        <h1 className="text-4xl font-bold mb-6 font-poppins text-gray-900">
+          {blog.title}
+        </h1>
 
         <div className="flex flex-wrap items-center font-poppins text-gray-500 mb-6 gap-y-2">
           <span className="flex  items-center">
@@ -85,13 +87,11 @@ export default function BlogPost() {
           remarkPlugins={[remarkGfm]}
           components={{
             code({
-              node,
               inline,
               className,
               children,
               ...props
             }: {
-              node?: any;
               inline?: boolean;
               className?: string;
               children?: React.ReactNode;
@@ -116,19 +116,27 @@ export default function BlogPost() {
                 </code>
               );
             },
-            h2: ({ node, ...props }) => (
-              <h2 className="text-2xl font-poppins  font-bold mt-8 mb-4" {...props} />
+            h2: ({ ...props }) => (
+              <h2
+                className="text-2xl font-poppins  font-bold mt-8 mb-4"
+                {...props}
+              />
             ),
-            h3: ({ node, ...props }) => (
-              <h3 className="text-xl font-poppins font-bold mt-6 mb-3" {...props} />
+            h3: ({ ...props }) => (
+              <h3
+                className="text-xl font-poppins font-bold mt-6 mb-3"
+                {...props}
+              />
             ),
-            p: ({ node, ...props }) => (
+            p: ({ ...props }) => (
               <p className="my-4 font-poppins leading-relaxed" {...props} />
             ),
-            ul: ({ node, ...props }) => (
+            ul: ({ ...props }) => (
               <ul className="list-disc pl-6 my-4 font-poppins" {...props} />
             ),
-            li: ({ node, ...props }) => <li className="mb-1 font-poppins" {...props} />,
+            li: ({ ...props }) => (
+              <li className="mb-1 font-poppins" {...props} />
+            ),
           }}
         >
           {blog.content}
