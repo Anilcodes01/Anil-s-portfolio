@@ -2,7 +2,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Poppins } from "next/font/google";
 import { FloatingDock } from "./components/floating-dock";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-poppins", 
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,12 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable}`}>
       <head>
         <link rel="icon" href="/1704534290885-modified.png" type="image/png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` antialiased`}
       >
         <FloatingDock />
         {children}

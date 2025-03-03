@@ -74,7 +74,7 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
   ];
 
   return (
-    <section className={`py-10 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-black'}`}>
+    <section className={`py-10 ${isDarkMode ? 'bg-gray-900 text-white' : ' text-black'}`}>
       <h2 className="text-3xl font-bold text-center mb-10">My Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-4xl">
         {projectData.map((project) => (

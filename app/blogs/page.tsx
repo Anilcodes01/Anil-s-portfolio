@@ -6,7 +6,7 @@ import { blogs } from '@/lib/blogdata';
 
 export default function Blogs() {
   return (
-    <div className="max-w-4xl mx-auto px-8 py-12">
+    <div className="max-w-4xl mx-auto font-poppins px-8 py-12">
 
 
       <div className="space-y-10">
@@ -27,7 +27,7 @@ export default function Blogs() {
               </Link>
             </h3>
             
-            <p className="text-gray-600 mb-4">{blog.description}</p>
+            <p className="text-gray-600 text-sm mb-4">{blog.description}</p>
             
             <div className="flex flex-wrap gap-2 mb-4">
               {blog.tags.map(tag => (

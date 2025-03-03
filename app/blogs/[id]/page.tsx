@@ -7,6 +7,10 @@ import { IconCalendar, IconClock, IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import { blogs } from "../../../lib/blogdata";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import remarkGfm from "remark-gfm";
+import Image from "next/image";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -32,16 +36,16 @@ export default function BlogPost() {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Link
         href="/blogs"
-        className="inline-flex items-center mb-8 text-orange-500 hover:text-orange-600"
+        className="inline-flex items-center font-poppins mb-8 text-orange-500 hover:text-orange-600"
       >
-        <IconArrowLeft size={16} className="mr-1" /> All posts
+        <IconArrowLeft size={16} className="mr-1 font-poppins" /> All Posts
       </Link>
 
       <header className="mb-10">
-        <h1 className="text-4xl font-bold mb-6 text-gray-900">{blog.title}</h1>
+        <h1 className="text-4xl font-bold mb-6 font-poppins text-gray-900">{blog.title}</h1>
 
-        <div className="flex flex-wrap items-center text-gray-500 mb-6 gap-y-2">
-          <span className="flex items-center">
+        <div className="flex flex-wrap items-center font-poppins text-gray-500 mb-6 gap-y-2">
+          <span className="flex  items-center">
             <IconCalendar size={18} className="mr-1" />
             {format(blog.publishedAt, "MMMM d, yyyy")}
           </span>
@@ -56,7 +60,7 @@ export default function BlogPost() {
           {blog.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-orange-300 text-gray-700 text-sm font-medium rounded-full"
+              className="px-3 py-1 font-poppins bg-orange-300 text-gray-700 text-sm font-medium rounded-full"
             >
               {tag}
             </span>
@@ -64,8 +68,71 @@ export default function BlogPost() {
         </div>
       </header>
 
-      <div className="prose prose-lg max-w-none">
-        {blog.content && <ReactMarkdown>{blog.content}</ReactMarkdown>}
+      <div>
+        {blog.imageUrl && (
+          <Image
+            src={blog.imageUrl}
+            width={1000}
+            height={800}
+            alt="websockets image"
+            className=" rounded-lg"
+          />
+        )}
+      </div>
+
+      <div className="prose prose-lg  max-w-none">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            code({
+              node,
+              inline,
+              className,
+              children,
+              ...props
+            }: {
+              node?: any;
+              inline?: boolean;
+              className?: string;
+              children?: React.ReactNode;
+            }) {
+              const match = /language-(\w+)/.exec(className || "");
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  style={vscDarkPlus}
+                  language={match[1]}
+                  PreTag="div"
+                  className="rounded-md my-4"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>
+              ) : (
+                <code
+                  className="bg-gray-100 px-1 py-0.5 rounded text-red-500 font-medium"
+                  {...props}
+                >
+                  {children}
+                </code>
+              );
+            },
+            h2: ({ node, ...props }) => (
+              <h2 className="text-2xl font-poppins  font-bold mt-8 mb-4" {...props} />
+            ),
+            h3: ({ node, ...props }) => (
+              <h3 className="text-xl font-poppins font-bold mt-6 mb-3" {...props} />
+            ),
+            p: ({ node, ...props }) => (
+              <p className="my-4 font-poppins leading-relaxed" {...props} />
+            ),
+            ul: ({ node, ...props }) => (
+              <ul className="list-disc pl-6 my-4 font-poppins" {...props} />
+            ),
+            li: ({ node, ...props }) => <li className="mb-1 font-poppins" {...props} />,
+          }}
+        >
+          {blog.content}
+        </ReactMarkdown>
       </div>
     </div>
   );
