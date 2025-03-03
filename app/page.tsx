@@ -52,7 +52,7 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <div className="flex flex-col lg:p-0  pl-3 lg:text-left">
+          <div className="flex flex-col   pl-3 lg:text-left">
             <div className="lg:text-6xl md:text-6xl  text-xl font-bold">Hi, I&apos;m Anil 👋</div>
             <div className={` ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} lg:text-md  md:text-md mt-1`}>
               I&apos;m a self-taught full stack developer, proficient in building fullstack web apps.
@@ -72,7 +72,7 @@ export default function Home() {
        
 
         <motion.div
-          className="mt-8"
+          className="mt-4"
           custom={1}
           initial="hidden"
           animate="visible"
