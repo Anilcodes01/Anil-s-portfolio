@@ -5,7 +5,7 @@ type AboutProps = {
 
 export default function About({ onProjectsClick, isDarkMode }: AboutProps) {
   return (
-    <div className={`p-4 ${isDarkMode ? ' text-white' : 'bg-white text-black'}`}>
+    <div className={`p-4 ${isDarkMode ? ' text-white' : 'bg-[#fff8f7] text-black'}`}>
       <div className="text-lg font-semibold">About</div>
       <p className={`text-gray-600  ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
 

@@ -23,7 +23,7 @@ import { usePathname } from "next/navigation";
 
 export const FloatingDock = () => {
   return (
-    <div className="flex items-center justify-center h-24">
+    <div className="flex items-center bg-[#fff8f7]  justify-center h-24">
       <FloatingDockCore />
     </div>
   );

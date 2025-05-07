@@ -1,6 +1,6 @@
 export default function Contact({ isDarkMode }: { isDarkMode: boolean }) {
     return (
-      <div className={`flex justify-center ${isDarkMode ? ' text-white' : 'bg-white text-black'}`}>
+      <div className={`flex justify-center ${isDarkMode ? ' text-white' : 'bg-[#fff8f7] text-black'}`}>
         <div className="w-full text-center">
           <div className="text-4xl font-bold">Get in Touch</div>
           <div className="text-md mt-1 flex w-full justify-center">

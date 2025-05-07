@@ -24,7 +24,7 @@ const SocialLinks = ({ isDarkMode, onProjectsClick }: SocialProps) => {
 
   return (
     <motion.div
-      className="mt-6 flex flex-wrap items-center gap-4  pl-3"
+      className="mt-6 flex bg-[#fff8f7] flex-wrap items-center gap-4  pl-3"
       custom={1}
       initial="hidden"
       animate="visible"

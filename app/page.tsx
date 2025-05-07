@@ -40,7 +40,7 @@ export default function Home() {
   }, [isDarkMode]);
 
   return (
-    <div className={`min-h-screen   flex justify-center items-center lg:p-10  md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : ' text-black'}`}>
+    <div className={`min-h-screen bg-[#fff8f7]  flex justify-center items-center lg:p-10  md:p-10 ${isDarkMode ? 'bg-gray-900 text-white' : ' text-black'}`}>
       <div className="flex flex-col max-w-screen-md mx-auto">
        
      

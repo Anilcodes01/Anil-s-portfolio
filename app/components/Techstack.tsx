@@ -4,13 +4,13 @@ export default function TechStack({ isDarkMode }: { isDarkMode: boolean }) {
   ];
 
   return (
-    <div className={`p-4 ${isDarkMode ? ' text-white' : 'bg-white text-black'}`}>
+    <div className={`p-4 ${isDarkMode ? ' text-white' : 'bg-[#fff8f7] text-black'}`}>
       <div className="text-lg font-semibold">TechStack</div>
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech) => (
           <span 
             key={tech}
-            className={`py-1 px-2 text-sm ${isDarkMode ? 'bg-gray-700 text-gray-400' : 'bg-slate-100 text-gray-600'} rounded-full`}
+            className={`py-1 px-2 text-sm ${isDarkMode ? 'bg-white text-gray-400' : 'bg-white text-gray-600'} rounded-full`}
           >
             {tech}
           </span>
