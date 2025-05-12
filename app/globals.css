@@ -76,3 +76,17 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* app/globals.css */
+
+/* ... your existing global styles ... */
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;  /* For Firefox */
+}

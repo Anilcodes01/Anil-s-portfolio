@@ -58,6 +58,7 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"], // Use the CSS variable
+        nunito: ['var(--font-nunito)'],
       },
     },
   },

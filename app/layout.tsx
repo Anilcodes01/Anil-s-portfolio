@@ -4,11 +4,19 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { FloatingDock } from "./components/floating-dock";
+import { Nunito } from "next/font/google";
+import PersonalInfoCard from "./components/PersonalInfo";
+import NavigationButtons from "./components/NavigationButtons";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], 
   variable: "--font-poppins", 
+});
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-nunito", 
 });
 
 const geistSans = localFont({
@@ -36,15 +44,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${poppins.variable} ${geistMono.variable} ${nunito.variable}`}>
       <head>
         <link rel="icon" href="/1704534290885-modified.png" type="image/png" />
       </head>
       <body
         className={` antialiased`}
       >
-        <FloatingDock />
-        {children}
+        {/* <FloatingDock /> */}
+       <div className=" bg-[#1e1e1f] flex pt-8 pl-8 pr-8   gap-16 w-full font-nunito h-screen overflow-y-hidden text-white font-bold">
+       <div className="w-[30%]  ">
+        <PersonalInfoCard />
+      </div>
+      <div className="w-[63%] min-h-screen">
+     <div>
+     {children}
+     </div>
+     <div className="fixed bottom-0 h-[10vh] bg-[#1e1e1f]   w-[63%] flex pt-2 items-center justify-center">
+      <NavigationButtons />
+     </div>
+      </div>
+       </div>
       </body>
     </html>
   );
