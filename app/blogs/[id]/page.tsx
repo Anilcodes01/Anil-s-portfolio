@@ -115,8 +115,7 @@ export default function BlogPostPage() {
                   inline?: boolean;
                   className?: string;
                   children?: React.ReactNode;
-// @ts-ignore
-                  [key: string]: any
+
                 }) {
                   const match = /language-(\w+)/.exec(className || "");
                   return !inline && match ? (
