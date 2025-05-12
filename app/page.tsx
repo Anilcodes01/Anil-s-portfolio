@@ -1,5 +1,4 @@
 import AboutComp from "./components/AboutComp";
-import NavigationButtons from "./components/NavigationButtons";
 
 export default function Home() {
   return (

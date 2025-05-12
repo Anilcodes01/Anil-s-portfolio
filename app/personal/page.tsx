@@ -1,5 +1,4 @@
 import AboutComp from "../components/AboutComp";
-import PersonalInfoCard from "../components/PersonalInfo";
 
 export default function PersonalPage() {
   return (

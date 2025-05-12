@@ -1,4 +1,4 @@
-import { h1 } from "framer-motion/client";
+
 
 export default function Timeline() {
   const timelines = [

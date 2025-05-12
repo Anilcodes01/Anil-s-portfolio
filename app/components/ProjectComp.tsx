@@ -1,4 +1,4 @@
-import NavigationButtons from "./NavigationButtons";
+
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import { FloatingDock } from "./components/floating-dock";
 import { Nunito } from "next/font/google";
 import PersonalInfoCard from "./components/PersonalInfo";
 import NavigationButtons from "./components/NavigationButtons";

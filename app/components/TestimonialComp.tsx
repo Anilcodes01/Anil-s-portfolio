@@ -1,4 +1,4 @@
-import NavigationButtons from "./NavigationButtons";
+
 import TestimonialCard from "./testimonialCard";
 
 

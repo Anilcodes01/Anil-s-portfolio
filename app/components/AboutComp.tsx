@@ -1,4 +1,4 @@
-import NavigationButtons from "./NavigationButtons";
+
 import Timeline from "./Timeline";
 
 export default function AboutComp() {
