@@ -19,7 +19,7 @@ export default function Timeline() {
       <h1 className="text-3xl">Timeline</h1>
       <div className="flex flex-col mt-2 gap-8">
         {timelines.map((timeline) => (
-            <div className="border rounded-3xl p-4 flex flex-col gap-4 border-gray-400">
+            <div key={timeline.title} className="border rounded-3xl p-4 flex flex-col gap-4 border-gray-400">
                 <h1 className="text-2xl font-bold">
                     {timeline.title}
                 </h1>

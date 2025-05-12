@@ -3,7 +3,6 @@ import { format } from 'date-fns';
 import { IconCalendar, IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { blogs } from '@/lib/blogdata';
-import NavigationButtons from '../components/NavigationButtons';
 
 export default function Blogs() {
   return (
