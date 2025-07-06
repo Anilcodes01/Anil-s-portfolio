@@ -72,8 +72,7 @@ export default function PersonalInfoCard() {
         </div>
         <div>
           <p className="mt-4 font-bold text-base">
-            Prominient American Businessman and the co-founder of Apple.Inc.,
-            also known as the founder of NeXT and chairman of Pixar
+          Engineer who writes 📝 | Fullstack developer | Machine Learning
           </p>
         </div>
         <div className="mt-8">

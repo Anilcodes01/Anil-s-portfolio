@@ -51,7 +51,8 @@ export default function RootLayout({
         className={` antialiased`}
       >
         {/* <FloatingDock /> */}
-       <div className=" bg-[#1e1e1f] flex pt-8 pl-8 pr-8   gap-16 w-full font-nunito h-screen overflow-y-hidden text-white font-bold">
+       
+       <div className=" bg-[#1e1e1f] flex p-8   gap-16 w-full font-nunito overflow-y-hidden text-white font-bold">
        <div className="w-[30%]  ">
         <PersonalInfoCard />
       </div>
@@ -59,7 +60,7 @@ export default function RootLayout({
      <div>
      {children}
      </div>
-     <div className="fixed bottom-0 h-[10vh] bg-[#1e1e1f]   w-[63%] flex pt-2 items-center justify-center">
+     <div className="fixed bottom-0 h-[10vh] bg-white/10 backdrop-blur-lg rounded-full w-fit  flex px-10 mb-4 py-2 items-center justify-center">
       <NavigationButtons />
      </div>
       </div>

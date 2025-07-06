@@ -26,7 +26,7 @@ export default function NavigationButtons() {
     ];
 
     return (
-        <div className="flex gap-8">
+        <div className="flex gap-8  w-fit left-[20%]">
             {Buttons.map((button) => (
                 <Link href={button.href} key={button.name}>
                     <div className={`px-3 py-1 rounded-xl transition-colors ${
@@ -42,6 +42,6 @@ export default function NavigationButtons() {
                     </div>
                 </Link>
             ))}
-        </div>
+            </div>
     );
 }
